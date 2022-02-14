@@ -12,7 +12,7 @@ interface ToggleProps {
   label: string
 }
 
-const Label = styled.label`
+const ToggleWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
@@ -23,58 +23,29 @@ const StyledSpan = styled.span`
   color: ${(props) => props.theme.alternate};
 `
 
-const Switch = styled.div`
-  position: relative;
-  width: 60px;
-  height: 28px;
-  background: #b3b3b3;
-  border-radius: 32px;
-  padding: 4px;
-  transition: 300ms all;
+const StyledButton = styled.button``
 
-  &:before {
-    transition: 300ms all;
-    content: '';
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    border-radius: 35px;
-    top: 50%;
-    left: 4px;
-    background: white;
-    transform: translate(0, -50%);
-  }
-`
-
-const Input = styled.input`
-  display: none;
-
-  &:checked + ${Switch} {
-    background: green;
-
-    &:before {
-      transform: translate(32px, -50%);
-    }
-  }
-`
+const StyledSwitch = styled.span``
 
 export const Toggle = (props: ToggleProps) => {
   const { isDark, setIsDark } = useContext(ThemeContext)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.MouseEvent<HTMLElement>) => {
     setIsDark(!isDark)
   }
 
   return (
-    <Label>
+    <ToggleWrapper>
       <StyledSpan> {isDark ? <FaMoon /> : <BsFillSunFill />}</StyledSpan>
-      <Input
+      <StyledButton
+        type="button"
+        role="switch"
+        aria-checked={`${!isDark}`}
         aria-label={props.label}
-        checked={!isDark}
-        type="checkbox"
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange(e)}
-      />
-      <Switch />
-    </Label>
+        onClick={(e: React.MouseEvent<HTMLElement>) => handleChange(e)}
+      >
+        <StyledSwitch />
+      </StyledButton>
+    </ToggleWrapper>
   )
 }

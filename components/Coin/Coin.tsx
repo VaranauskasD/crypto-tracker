@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-interface CoinProps {
+export interface CoinProps {
   id: String
   ath: number
   ath_change_percentage: number

@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   margin: 16px;
-  width: 100%;
+  width: 100vh;
   background: ${(props) => props.theme.background};
 `
 

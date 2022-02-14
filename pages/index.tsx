@@ -4,14 +4,14 @@ import axios from 'axios'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import { Coin, CoinList } from '../config/coingecko'
+import { Coin, GetCoins } from '../config/coingecko'
 import styles from '../styles/Home.module.css'
-import { PageLayout, Coin as StyledCoin } from '../components'
+import { PageLayout, CoinList } from '../components'
 
 const Home: NextPage<{ coins: Coin[] }> = (props: { coins: Coin[] }) => {
   const [currency, setCurrency] = useState('USD')
-  // const [coins, setCoins] = useState([])
   const [loading, setLoading] = useState(false)
+  /*// const [coins, setCoins] = useState([])
 
   // const fetchCoins = async () => {
   //   setLoading(true)
@@ -22,7 +22,7 @@ const Home: NextPage<{ coins: Coin[] }> = (props: { coins: Coin[] }) => {
 
   // useEffect(() => {
   //   fetchCoins()
-  // }, [currency])
+  // }, [currency])*/
   return (
     <React.Fragment>
       <Head>
@@ -31,15 +31,14 @@ const Home: NextPage<{ coins: Coin[] }> = (props: { coins: Coin[] }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PageLayout>
-        {props.coins &&
-          props.coins.map((coin: Coin) => <StyledCoin {...coin} />)}
+        <CoinList coins={props.coins} />
       </PageLayout>
     </React.Fragment>
   )
 }
 
 Home.getInitialProps = async () => {
-  const { data } = await axios.get(CoinList('USD'))
+  const { data } = await axios.get(GetCoins('USD'))
   return { coins: data }
 }
 

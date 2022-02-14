@@ -6,8 +6,8 @@ import { ThemeContext } from '../contexts'
 
 const theme = {
   light: {
-    foreground: '#FFD700',
-    alternate: '#000000',
+    foreground: '#000000',
+    alternate: '#FFD700',
     background: '#eeeeee',
     background_lighter: '#ffffff',
   },
