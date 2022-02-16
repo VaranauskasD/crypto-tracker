@@ -11,18 +11,6 @@ import { PageLayout, CoinList } from '../components'
 const Home: NextPage<{ coins: Coin[] }> = (props: { coins: Coin[] }) => {
   const [currency, setCurrency] = useState('USD')
   const [loading, setLoading] = useState(false)
-  /*// const [coins, setCoins] = useState([])
-
-  // const fetchCoins = async () => {
-  //   setLoading(true)
-  //   const { data } = await axios.get(CoinList('USD'))
-  //   setCoins(data)
-  //   setLoading(false)
-  // }
-
-  // useEffect(() => {
-  //   fetchCoins()
-  // }, [currency])*/
   return (
     <React.Fragment>
       <Head>
