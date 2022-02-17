@@ -3,7 +3,6 @@ import Link from 'next/link'
 
 import styled from 'styled-components'
 
-import { Switch } from '@mui/material'
 import { BsFillSunFill } from 'react-icons/bs'
 import { FaMoon } from 'react-icons/fa'
 
