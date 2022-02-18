@@ -14,13 +14,11 @@ const PageWrapper = styled.div`
   color: ${(props) => props.theme.foreground};
 `
 
-const ContentWrapper = styled.main``
-
 export const PageLayout = (props: { children?: React.ReactNode }) => {
   return (
     <PageWrapper>
       <Header />
-      <ContentWrapper>{props.children}</ContentWrapper>
+      <main>{props.children}</main>
     </PageWrapper>
   )
 }
