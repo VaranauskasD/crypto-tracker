@@ -31,6 +31,12 @@ export interface CoinProps {
 
 const CoinContainer = styled.div``
 
+const CoinDetails = styled.div``
+
 export const Coin = (props: CoinProps) => {
-  return <CoinContainer>{props.name}</CoinContainer>
+  return (
+    <CoinContainer>
+      {props.name} {props.current_price}
+    </CoinContainer>
+  )
 }
