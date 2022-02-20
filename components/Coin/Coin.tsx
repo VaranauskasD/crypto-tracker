@@ -36,7 +36,9 @@ const CoinDetails = styled.div``
 export const Coin = (props: CoinProps) => {
   return (
     <CoinContainer>
-      {props.name} {props.current_price}
+      <li>
+        {props.name} {props.current_price}
+      </li>
     </CoinContainer>
   )
 }
