@@ -15,7 +15,9 @@ export const CoinList = (props: { coins: CoinProps[] }) => {
     <CoinListWrapper>
       <StyledList>
         {props.coins &&
-          props.coins.map((coin: CoinProps) => <Coin {...coin} />)}
+          props.coins.map((coin: CoinProps, index) => (
+            <Coin key={index} {...coin} />
+          ))}
       </StyledList>
     </CoinListWrapper>
   )

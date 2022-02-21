@@ -29,16 +29,14 @@ export interface CoinProps {
   total_volume: number
 }
 
-const CoinContainer = styled.div``
+const CoinContainer = styled.li``
 
 const CoinDetails = styled.div``
 
 export const Coin = (props: CoinProps) => {
   return (
     <CoinContainer>
-      <li>
-        {props.name} {props.current_price}
-      </li>
+      {props.name} {props.current_price}
     </CoinContainer>
   )
 }
