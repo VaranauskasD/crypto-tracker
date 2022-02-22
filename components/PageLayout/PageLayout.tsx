@@ -9,16 +9,26 @@ interface HeaderProps {}
 const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.foreground};
+`
+
+const PageContent = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vh;
 `
 
 export const PageLayout = (props: { children?: React.ReactNode }) => {
   return (
     <PageWrapper>
       <Header />
-      <main>{props.children}</main>
+      <PageContent>{props.children}</PageContent>
     </PageWrapper>
   )
 }

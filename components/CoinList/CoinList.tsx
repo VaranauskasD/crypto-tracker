@@ -6,9 +6,14 @@ interface CoinListProps {
   coins: CoinProps[]
 }
 
-const CoinListWrapper = styled.div``
+const CoinListWrapper = styled.div`
+  width: 100%;
+`
 
-const StyledList = styled.ul``
+const StyledList = styled.ul`
+  margin: 0;
+  padding: 0;
+`
 
 export const CoinList = (props: { coins: CoinProps[] }) => {
   return (

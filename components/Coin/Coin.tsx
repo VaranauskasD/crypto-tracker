@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Link from 'next/link'
 
 export interface CoinProps {
   id: String
@@ -29,14 +30,28 @@ export interface CoinProps {
   total_volume: number
 }
 
-const CoinContainer = styled.li``
+const CoinContainer = styled.li`
+  width: 100%;
+  list-style-type: none;
+`
+
+const CoinLink = styled.a`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`
 
 const CoinDetails = styled.div``
 
 export const Coin = (props: CoinProps) => {
   return (
     <CoinContainer>
-      {props.name} {props.current_price}
+      <Link href={`/${props.id}`} passHref={true}>
+        <CoinLink>
+          <span>{props.name}</span>
+          <span>{props.current_price}</span>
+        </CoinLink>
+      </Link>
     </CoinContainer>
   )
 }
