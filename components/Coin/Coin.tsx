@@ -46,7 +46,7 @@ const CoinDetails = styled.div``
 export const Coin = (props: CoinProps) => {
   return (
     <CoinContainer>
-      <Link href={`/${props.id}`} passHref={true}>
+      <Link href={`/coin/${props.id}`} passHref={true}>
         <CoinLink>
           <span>{props.name}</span>
           <span>{props.current_price}</span>

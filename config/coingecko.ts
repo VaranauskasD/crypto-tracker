@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 export interface Coin {
-  id: String
+  id: string
   ath: number
   ath_change_percentage: number
   ath_date: Date
@@ -12,7 +12,7 @@ export interface Coin {
   current_price: number
   fully_diluted_valuation: number
   high_24h: number
-  image: String
+  image: string
   last_updated: Date
   low_24h: number
   market_cap: number
@@ -20,7 +20,7 @@ export interface Coin {
   market_cap_change_percentage_24h: number
   market_cap_rank: number
   max_supply: number
-  name: String
+  name: string
   price_change_24h: number
   price_change_percentage_24h: number
   symbol: string
@@ -28,5 +28,8 @@ export interface Coin {
   total_volume: number
 }
 
-export const GetCoins = (currency: String) =>
+export const GetCoins = (currency: string) =>
   `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=100&page=1&sparkline=false`
+
+export const SingleCoin = (id: string) =>
+  `https://api.coingecko.com/api/v3/coins/${id}`
